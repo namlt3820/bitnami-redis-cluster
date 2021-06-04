@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  redis-node-1:
+    image: docker.io/bitnami/redis:6.2
+    container_name: bitnami_redis
+    environment:
+      - REDIS_PASSWORD=password123
+    ports:
+      - '29000:6379'
+    volumes:
+      - 'redis-node-1:/bitnami/redis/data'
+      - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
+
+  redis-node-2:
+    image: docker.io/bitnami/redis:6.2
+    container_name: bitnami_redis
+    environment:
+      - REDIS_PASSWORD=password123
+    ports:
+      - '29001:6379'
+    volumes:
+      - 'redis-node-2:/bitnami/redis/data'
+      - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
+
+volumes:
+  redis-node-1:
+    driver: local
+  redis-node-2:
+    driver: local
