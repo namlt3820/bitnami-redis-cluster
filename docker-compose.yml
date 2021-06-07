@@ -3,7 +3,7 @@ version: '2'
 services:
   redis-node-1:
     image: docker.io/bitnami/redis:6.2
-    container_name: bitnami_redis
+    container_name: redis-node-1
     environment:
       - REDIS_PASSWORD=password123
     ports:
@@ -14,7 +14,7 @@ services:
 
   redis-node-2:
     image: docker.io/bitnami/redis:6.2
-    container_name: bitnami_redis
+    container_name: redis-node-2
     environment:
       - REDIS_PASSWORD=password123
     ports:
