@@ -10,14 +10,15 @@ services:
   redis-node-1:
     image: 'docker.io/bitnami/redis:6.0-debian-10'
     container_name: redis-node-1
+    restart: on-failure
     environment:
       - REDIS_PASSWORD=password123
     ports:
-      - '6000:6379'
-      - '16000:16379'
+      - '6000:6000'
+      - '16000:16000'
     volumes:
       - './data-1:/bitnami/redis/data'
-      - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
+      - './redis-conf/redis-1.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
       - './nodes-conf-1:/opt/bitnami/redis/nodes-conf'
     depends_on:
       - permission-adapter-1
@@ -30,14 +31,15 @@ services:
   redis-node-2:
     image: 'docker.io/bitnami/redis:6.0-debian-10'
     container_name: redis-node-2
+    restart: on-failure
     environment:
       - REDIS_PASSWORD=password123
     ports:
-      - '7000:6379'
-      - '17000:16379'
+      - '7000:7000'
+      - '17000:17000'
     volumes:
       - './data-2:/bitnami/redis/data'
-      - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
+      - './redis-conf/redis-2.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
       - './nodes-conf-2:/opt/bitnami/redis/nodes-conf'
     depends_on:
       - permission-adapter-2
