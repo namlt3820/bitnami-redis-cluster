@@ -10,8 +10,6 @@ services:
   redis-node-1:
     image: 'docker.io/bitnami/redis:6.0-debian-10'
     container_name: redis-node-1
-    environment:
-      - REDIS_PASSWORD=password123
     ports:
       - '6000:6379'
     volumes:
@@ -29,8 +27,6 @@ services:
   redis-node-2:
     image: 'docker.io/bitnami/redis:6.0-debian-10'
     container_name: redis-node-2
-    environment:
-      - REDIS_PASSWORD=password123
     ports:
       - '6001:6379'
     volumes:
