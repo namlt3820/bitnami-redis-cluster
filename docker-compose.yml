@@ -12,7 +12,7 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '6379:6379'
+      - '6000:6379'
     volumes:
       - './data-1:/bitnami/redis/data'
       - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
@@ -30,7 +30,7 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '6379:6379'
+      - '6001:6379'
     volumes:
       - './data-2:/bitnami/redis/data'
       - './redis.conf:/opt/bitnami/redis/mounted-etc/redis.conf'
