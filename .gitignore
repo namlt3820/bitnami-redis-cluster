@@ -1,2 +1,4 @@
 .idea
 scripts
+data-*
+nodes-conf-*
